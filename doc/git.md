@@ -8,3 +8,6 @@ git reset --soft HEAD~1
 git reset HEAD~1
 
 git status
+
+
+git rm test.md
