@@ -1,2 +1,4 @@
 moviepy == 1.0.3
 ffmpeg-python  == 0.2.0
+openai == 0.27.2
+notion-client == 2.0.0

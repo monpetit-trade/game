@@ -26,6 +26,6 @@ class MyScanner:
 
 
 if __name__ == "__main__":
-    path = r"C:\HOLDING\GAME\CODE\NICECONVERTER\RES\VIDEO"
+    path = r"/res/video"
     files = MyScanner.scan_files(path)
     print(files)

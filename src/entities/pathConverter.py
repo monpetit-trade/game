@@ -1,6 +1,7 @@
 import os
+from src.utilities.shareFunctions import ShareFunctions
 
-class Path():
+class PathConverter():
     pathEnter: str = ""
     pathExit: str = ""
     extensionOutput:str=""
@@ -17,19 +18,10 @@ class Path():
         self.pathExit = _pathExit
         self.extensionOutput = _outsideExtension
 
-    @staticmethod
-    def scan_files(path: str) -> list[str]:
-        listFile: list[str] = []
-        for root, dirs, files in os.walk(path):
-            for file in files:
-                file_path = os.path.join(root, file)
-                listFile.append(file_path[len(path):])
-        return listFile
-
     def genListFiles(self):
         # Scanning files in Video, and in Audio
-        self.listFileEnter = self.scan_files(self.pathEnter)
-        self.listFileExit = self.scan_files(self.pathExit)
+        self.listFileEnter = ShareFunctions.scan_files(self.pathEnter)
+        self.listFileExit = ShareFunctions.scan_files(self.pathExit)
 
         # Create a dictionary to store filenames and their extensions
         file_extensions = {}
