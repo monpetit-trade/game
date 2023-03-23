@@ -10,3 +10,19 @@ class ShareFunctions():
                 file_path = os.path.join(root, file)
                 listFile.append(file_path[len(path):])
         return listFile
+
+    @staticmethod
+    def parentPathIndex(parentIndex):
+        currentPath = os.getcwd()
+        for i in range(parentIndex):
+            currentPath = os.path.dirname(currentPath)
+        return currentPath+"\\"
+
+    @staticmethod
+    def readFile(path):
+        with open(path,"r") as f:
+            lignes=[]
+            for ligne in f:
+                lignes.append(ligne)
+        return lignes
+
